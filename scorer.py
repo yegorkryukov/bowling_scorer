@@ -1,3 +1,5 @@
+"""Main bowling scorer program"""
+
 import sys
 
 def main():
