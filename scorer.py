@@ -1,3 +1,14 @@
+import sys
+
+def main():
+    script = sys.argv[0]
+    try:
+        sequence = sys.argv[1]
+        print(f'Sequence: {sequence}, score: {scorer(sequence)}')
+    except IndexError:
+        print('Error: Pass the sequence string after calling scorer.py') 
+        
+
 def converter(seq):
     seq = ''.join(seq.split('-'))
     score = 0
@@ -11,7 +22,6 @@ def converter(seq):
 def scorer(sequence):
     Score = 0
     Frame = 0
-    sequence += '00'
     i = 0
     for i in range(len(sequence)-2):
         if Frame == 10: break
@@ -28,4 +38,4 @@ def scorer(sequence):
     return Score
 
 if __name__ == '__main__':
-    print(f'For sequence "X-X-X-X-X-X-X-X-X-X-XX" the result should be "300".\n It is: {scorer("X-X-X-X-X-X-X-X-X-X-XX")}.')
+    main()
