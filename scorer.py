@@ -6,7 +6,8 @@ def main():
         sequence = sys.argv[1]
         print(f'Sequence: {sequence}, score: {scorer(sequence)}')
     except IndexError:
-        print('Error: Pass the sequence string after calling scorer.py') 
+        print('Enter the sequence to evaluate: ')
+        print(f'Score: {scorer(input())}')
         
 
 def converter(seq):
@@ -23,7 +24,7 @@ def scorer(sequence):
     Score = 0
     Frame = 0
     i = 0
-    for i in range(len(sequence)-2):
+    for i in range(len(sequence)):
         if Frame == 10: break
         throw = sequence[i] 
         if throw.isdigit():
