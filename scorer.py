@@ -11,6 +11,10 @@ def main():
         
 
 def converter(seq):
+    """
+    Given a string of symbols, uses bowling rules to convert 'X' and '/' to '10' 
+    and sums it up with other numbers in the string. 
+    """
     seq = ''.join(seq.split('-'))
     score = 0
     for s in seq:
@@ -21,6 +25,14 @@ def converter(seq):
     return score
     
 def scorer(sequence):
+    """
+    Bowling game calculator function. 
+    DOES NOT check for validity.
+
+    Input
+    ------
+    sequence : String of 'throws' 
+    """
     Score = 0
     Frame = 0
     i = 0
